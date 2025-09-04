@@ -19,3 +19,16 @@ def find_sum_of_two(A, val):
             return True
         s.add(num)  
     return False
+
+
+# Hashmap 
+def two_sum(arr, t):
+
+    # Replace this placeholder return statement with your code
+    hashmap = {}
+    
+    for i in range(len(arr)):
+        difference = t - arr[i]
+        if difference in hashmap:
+            return [i, hashmap[difference]]
+        hashmap[arr[i]] = i
