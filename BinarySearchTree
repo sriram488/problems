@@ -1,0 +1,12 @@
+def is_bst_rec(node, min_val, max_val):
+    if node is None:
+        return True
+    
+    if not (min_val < node.data < max_val):
+        return False
+    
+    return (is_bst_rec(node.left, min_val, node.data) and
+            is_bst_rec(node.right, node.data, max_val))
+
+def is_bst(root):    
+    return is_bst_rec(root, float('-inf'), float('inf'))
